@@ -14,7 +14,7 @@
 
 **Note**: It is not recommended to use VSCode for connecting to Discovery. Since the VSCode Server is not integrated into Discovery, it may take a significant amount of time to initialize VSCode each time you log in, as well as increase CPU usage on the login node.
 
-**Note**: Additionally, using Open OnDemand (OOD) for connecting to Discovery is also discouraged due to poor connection reliability experienced while using OOD.
+**Note**: Additionally, using Open OnDemand (OOD) terminal for connecting to Discovery is also discouraged due to poor connection reliability experienced while using OOD.
 
 **Note**: If anyone finds a good solution to these connection problems, please let me know so we can adopt a better approach!
 
@@ -56,6 +56,17 @@
     ```bash
     conda env list
     ```
+
+## 3. **Running Jupyter Notebooks using OOD**
+   After accessing the compute node and loading the required versions of Conda, run the following command to install JupyterLab:
+```
+   conda install jupyterlab -y
+```
+Next, open Open OnDemand (OOD) by referring to the [open ondemand guide](https://rc.northeastern.edu/ood/#:~:text=Log%20in%20to%20OOD.,launching%20JupyterLab%20Notebook%20will%20appear.) 
+In the dropdown menu for interactive apps, select `JupyterLab Notebook`. Configure the environment by specifying the CUDA version and Conda environment (full path required), as shown in the screenshot below: <img width="640" alt="Screenshot 2024-11-06 at 15 21 08" src="https://github.com/user-attachments/assets/1e0a6a0c-2e18-4c06-b2b9-c5825d22eb84"> 
+Finally, click Launch and wait for the session to initialize.
+
+
 Now, you’re ready to make full use of the Research Cluster!
 
 --- 
