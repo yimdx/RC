@@ -58,7 +58,7 @@
     ```
 
 ## 3. **Running Jupyter Notebooks using OOD**
-   After accessing the compute node and loading the required versions of Conda, run the following command to install JupyterLab:
+   After accessing the compute node and loading the required environment of Conda, run the following command to install JupyterLab:
 ```
    conda install jupyterlab -y
 ```
