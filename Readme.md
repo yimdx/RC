@@ -64,6 +64,7 @@
 ```
 Next, open Open OnDemand (OOD) by referring to the [open ondemand guide](https://rc.northeastern.edu/ood/#:~:text=Log%20in%20to%20OOD.,launching%20JupyterLab%20Notebook%20will%20appear.) 
 In the dropdown menu for interactive apps, select `JupyterLab Notebook`. Configure the environment by specifying the CUDA version and Conda environment (full path required), as shown in the screenshot below: 
+
 <img width="640" alt="Screenshot 2024-11-06 at 15 21 08" src="https://github.com/user-attachments/assets/1e0a6a0c-2e18-4c06-b2b9-c5825d22eb84"> 
 
 Finally, click Launch and wait for the session to initialize.
