@@ -76,4 +76,47 @@ Now, you’re ready to make full use of the Research Cluster!
 
 Let me know if anyone find something helpful! I'll keep updating it!
 
+## A quick look at how to use sbacth to submit jobs
+First you need to create a `.sh` file, let's call it `smartgd.sh`:
 
+```sh
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --time=04:00:00
+#SBATCH --job-name=smartgd
+#SBATCH --mem=48G
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:a100:1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --error=%A-%a.err
+#SBATCH --output=%A-%a.out
+#SBATCH --array=1-10%1  #execute 2 array jobs, 1 at a time.
+
+
+# Your program/command here
+
+module load anaconda3/2022.05
+module load cuda/11.8
+source activate /scratch/li.xuefen/gd_test
+
+cd /scratch/li.xuefen/SmartGD
+python3 -c "import torch; print(torch.__version__)"
+python3 run.py
+
+```
+
+then in your command line(this can be done at login nodes):
+```bash
+sbatch smartgd.sh
+```
+
+to have a view on your jobs
+```
+squeue -u <your username>
+```
+to cancel all your jobs
+```
+scancel -u <your username>
+```
